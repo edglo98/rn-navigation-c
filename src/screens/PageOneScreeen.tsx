@@ -1,14 +1,33 @@
+import {StackScreenProps} from '@react-navigation/stack';
 import React from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+import {Button, Text, View} from 'react-native';
+import {TouchableOpacity} from 'react-native-gesture-handler';
+import theme from '../theme/theme';
 
-const PageOneScreeen = () => {
+interface Props extends StackScreenProps<any, any> {}
+
+const PageOneScreeen = ({navigation}: Props) => {
   return (
-    <View>
-      <Text>pagina una</Text>
+    <View style={theme.screen}>
+      <Text style={theme.title}>pagina una</Text>
+
+      <Button
+        title="ir a pagina 2"
+        onPress={() => navigation.navigate('PageTwoScreeen')}
+      />
+
+      <Text>Usuarios:</Text>
+      <TouchableOpacity
+        onPress={() =>
+          navigation.navigate('UserScreen', {
+            id: 1,
+            name: 'Edgar',
+          })
+        }>
+        <Text>Edgar</Text>
+      </TouchableOpacity>
     </View>
   );
 };
 
 export default PageOneScreeen;
-
-const styles = StyleSheet.create({});

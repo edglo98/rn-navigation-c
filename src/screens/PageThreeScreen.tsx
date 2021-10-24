@@ -1,14 +1,19 @@
+import {StackScreenProps} from '@react-navigation/stack';
 import React from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+import {Button, Text, View} from 'react-native';
+import theme from '../theme/theme';
 
-const PageThreeScreeen = () => {
+interface Props extends StackScreenProps<any, any> {}
+
+const PageThreeScreeen = ({navigation}: Props) => {
   return (
-    <View>
-      <Text>pagina tres</Text>
+    <View style={theme.screen}>
+      <Text style={theme.title}>pagina tres</Text>
+
+      <Button title="Regresar" onPress={() => navigation.pop()} />
+      <Button title="Regresar" onPress={() => navigation.popToTop()} />
     </View>
   );
 };
 
 export default PageThreeScreeen;
-
-const styles = StyleSheet.create({});
