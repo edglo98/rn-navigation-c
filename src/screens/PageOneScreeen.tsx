@@ -1,12 +1,26 @@
-import {StackScreenProps} from '@react-navigation/stack';
-import React from 'react';
-import {Button, Text, View} from 'react-native';
+import {DrawerScreenProps} from '@react-navigation/drawer';
+import React, {useEffect} from 'react';
+import {Button, Pressable, Text, View} from 'react-native';
 import {TouchableOpacity} from 'react-native-gesture-handler';
 import theme from '../theme/theme';
 
-interface Props extends StackScreenProps<any, any> {}
+// interface Props extends StackScreenProps<any, any> {}
+interface Props extends DrawerScreenProps<any, any> {}
 
 const PageOneScreeen = ({navigation}: Props) => {
+  useEffect(() => {
+    navigation.setOptions({
+      headerLeft: () => (
+        <Pressable
+          onPress={() => {
+            navigation.toggleDrawer();
+          }}>
+          <Text>🍔</Text>
+        </Pressable>
+      ),
+    });
+  }, [navigation]);
+
   return (
     <View style={theme.screen}>
       <Text style={theme.title}>pagina una</Text>
