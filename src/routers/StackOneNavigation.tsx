@@ -5,7 +5,14 @@ import PageThreeScreeen from '../screens/PageThreeScreen';
 import PageTwoScreeen from '../screens/PageTwoScreen';
 import UserScreen from '../screens/UserScreen';
 
-const Stack = createStackNavigator();
+export type RootStackParams = {
+  PageOneScreeen: undefined;
+  PageTwoScreeen: undefined;
+  PageThreeScreeen: undefined;
+  UserScreen: {id: number; name: string};
+};
+
+const Stack = createStackNavigator<RootStackParams>();
 
 const StackOneNavigation = () => {
   return (

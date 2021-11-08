@@ -26,6 +26,16 @@ const PageOneScreeen = ({navigation}: Props) => {
         }>
         <Text>Edgar</Text>
       </TouchableOpacity>
+
+      <TouchableOpacity
+        onPress={() =>
+          navigation.navigate('UserScreen', {
+            id: 1,
+            name: 'Luz',
+          })
+        }>
+        <Text>Luz</Text>
+      </TouchableOpacity>
     </View>
   );
 };
