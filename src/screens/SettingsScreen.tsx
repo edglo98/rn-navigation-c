@@ -6,7 +6,7 @@ const SettingsScreen = () => {
   const insets = useSafeAreaInsets();
   return (
     <View style={{marginTop: insets.top}}>
-      <Text>setting page</Text>
+      <Text>setting screen</Text>
     </View>
   );
 };
