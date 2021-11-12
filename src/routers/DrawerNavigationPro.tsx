@@ -5,7 +5,6 @@ import {
   DrawerContentScrollView,
 } from '@react-navigation/drawer';
 import SettingsScreen from '../screens/SettingsScreen';
-import StackOneNavigation from './StackOneNavigation';
 import {
   Image,
   Pressable,
@@ -14,6 +13,7 @@ import {
   useWindowDimensions,
   View,
 } from 'react-native';
+import BottomTabs from './BottomTabs';
 
 const Drawer = createDrawerNavigator();
 
@@ -28,9 +28,9 @@ const DrawerNavigationPro = () => {
       }}
       drawerContent={props => <MenuDrawer {...props} />}>
       <Drawer.Screen
-        name="StackNavigation"
+        name="BottomTabs"
         options={{title: 'Home'}}
-        component={StackOneNavigation}
+        component={BottomTabs}
       />
       <Drawer.Screen
         name="SettingsScree"
@@ -54,7 +54,7 @@ const MenuDrawer = ({navigation}: DrawerContentComponentProps) => {
           style={classes.imgAvatar}
         />
 
-        <Pressable onPress={() => navigation.navigate('StackNavigation')}>
+        <Pressable onPress={() => navigation.navigate('BottomTabs')}>
           <Text style={classes.navigatorTittle}>Home</Text>
         </Pressable>
         <Pressable onPress={() => navigation.navigate('SettingsScree')}>

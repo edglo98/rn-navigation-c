@@ -12,6 +12,7 @@ const PageOneScreeen = ({navigation}: Props) => {
     navigation.setOptions({
       headerLeft: () => (
         <Pressable
+          style={theme.hamburguerMenu}
           onPress={() => {
             navigation.toggleDrawer();
           }}>
@@ -23,7 +24,7 @@ const PageOneScreeen = ({navigation}: Props) => {
 
   return (
     <View style={theme.screen}>
-      <Text style={theme.title}>pagina una</Text>
+      <Text style={theme.title}>Pagina una</Text>
 
       <Button
         title="ir a pagina 2"
@@ -31,25 +32,30 @@ const PageOneScreeen = ({navigation}: Props) => {
       />
 
       <Text>Usuarios:</Text>
-      <TouchableOpacity
-        onPress={() =>
-          navigation.navigate('UserScreen', {
-            id: 1,
-            name: 'Edgar',
-          })
-        }>
-        <Text>Edgar</Text>
-      </TouchableOpacity>
 
-      <TouchableOpacity
-        onPress={() =>
-          navigation.navigate('UserScreen', {
-            id: 1,
-            name: 'Luz',
-          })
-        }>
-        <Text>Luz</Text>
-      </TouchableOpacity>
+      <View style={theme.gridContainer}>
+        <TouchableOpacity
+          style={theme.userCard}
+          onPress={() =>
+            navigation.navigate('UserScreen', {
+              id: 1,
+              name: 'Edgar',
+            })
+          }>
+          <Text>Edgar</Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity
+          style={theme.userCard}
+          onPress={() =>
+            navigation.navigate('UserScreen', {
+              id: 1,
+              name: 'Fernando',
+            })
+          }>
+          <Text>Fernando</Text>
+        </TouchableOpacity>
+      </View>
     </View>
   );
 };
