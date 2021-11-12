@@ -5,7 +5,7 @@ import ContactsScreen from '../screens/ContactsScreen';
 import AlbumsScreen from '../screens/AlbumsScreen';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import {colors} from '../theme/theme';
-import {Text} from 'react-native';
+import Icon from 'react-native-vector-icons/Ionicons';
 
 const TopTab = createMaterialTopTabNavigator();
 
@@ -25,7 +25,9 @@ const TopTabNavigation = () => {
         name="ChatScreen"
         options={{
           title: 'Chat',
-          tabBarIcon: ({color}) => <Text style={{color}}>Icon</Text>,
+          tabBarIcon: ({color}) => (
+            <Icon name="chatbox-ellipses-outline" size={20} color={color} />
+          ),
         }}
         component={ChatScreen}
       />
@@ -33,7 +35,9 @@ const TopTabNavigation = () => {
         name="ContactsScreen"
         options={{
           title: 'Contactos',
-          tabBarIcon: ({color}) => <Text style={{color}}>Icon</Text>,
+          tabBarIcon: ({color}) => (
+            <Icon name="people-outline" size={20} color={color} />
+          ),
         }}
         component={ContactsScreen}
       />
@@ -41,7 +45,9 @@ const TopTabNavigation = () => {
         name="AlbumsScreen"
         options={{
           title: 'Album',
-          tabBarIcon: ({color}) => <Text style={{color}}>Icon</Text>,
+          tabBarIcon: ({color}) => (
+            <Icon name="albums-outline" size={20} color={color} />
+          ),
         }}
         component={AlbumsScreen}
       />

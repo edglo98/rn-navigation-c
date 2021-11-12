@@ -1,5 +1,7 @@
 import {StyleSheet} from 'react-native';
 export const colors = {
+  black: '#282a2f',
+  gray: '#8E8E93',
   white: '#fff',
   primary: '#ffb500',
   secondary: '#00a680',
@@ -19,7 +21,7 @@ const theme = StyleSheet.create({
     marginVertical: 10,
     padding: 10,
     fontSize: 20,
-    backgroundColor: '#f6950c',
+    backgroundColor: colors.primary,
     width: 120,
     height: 120,
     borderRadius: 5,

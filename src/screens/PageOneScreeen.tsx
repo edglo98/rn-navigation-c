@@ -2,7 +2,8 @@ import {DrawerScreenProps} from '@react-navigation/drawer';
 import React, {useEffect} from 'react';
 import {Button, Pressable, Text, View} from 'react-native';
 import {TouchableOpacity} from 'react-native-gesture-handler';
-import theme from '../theme/theme';
+import Icon from 'react-native-vector-icons/Ionicons';
+import theme, {colors} from '../theme/theme';
 
 // interface Props extends StackScreenProps<any, any> {}
 interface Props extends DrawerScreenProps<any, any> {}
@@ -16,7 +17,7 @@ const PageOneScreeen = ({navigation}: Props) => {
           onPress={() => {
             navigation.toggleDrawer();
           }}>
-          <Text>🍔</Text>
+          <Icon name="menu-outline" size={30} color={colors.gray} />
         </Pressable>
       ),
     });
@@ -42,7 +43,8 @@ const PageOneScreeen = ({navigation}: Props) => {
               name: 'Edgar',
             })
           }>
-          <Text>Edgar</Text>
+          <Icon name="person-circle-outline" size={50} color={colors.black} />
+          <Text style={{color: colors.black}}>Edgar</Text>
         </TouchableOpacity>
 
         <TouchableOpacity
@@ -53,7 +55,8 @@ const PageOneScreeen = ({navigation}: Props) => {
               name: 'Fernando',
             })
           }>
-          <Text>Fernando</Text>
+          <Icon name="person-circle-outline" size={50} color={colors.black} />
+          <Text style={{color: colors.black}}>Fernando</Text>
         </TouchableOpacity>
       </View>
     </View>

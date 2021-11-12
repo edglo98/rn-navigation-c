@@ -6,6 +6,7 @@ import StackOneNavigation from './StackOneNavigation';
 import theme, {colors} from '../theme/theme';
 import {Platform, Text} from 'react-native';
 import TopTabNavigation from './TopTabNavigator';
+import Icon from 'react-native-vector-icons/Ionicons';
 
 export const BottomTabs = () => {
   return Platform.OS === 'ios' ? <BottomTabsIOS /> : <BottomTabsANDROID />;
@@ -74,7 +75,7 @@ const BottomTabsIOS = () => {
         options={{
           title: 'Tab 1',
           tabBarIcon: props => (
-            <Text style={props.focused ? theme.iconSelected : null}>Icon</Text>
+            <Icon name="brush-outline" size={props.size} color={props.color} />
           ),
         }}
         component={TabOneScreen}
@@ -84,7 +85,11 @@ const BottomTabsIOS = () => {
         options={{
           title: 'Tab 2',
           tabBarIcon: props => (
-            <Text style={props.focused ? theme.iconSelected : null}>Icon</Text>
+            <Icon
+              name="file-tray-full-outline"
+              size={props.size}
+              color={props.color}
+            />
           ),
         }}
         component={TopTabNavigation}
@@ -94,7 +99,7 @@ const BottomTabsIOS = () => {
         options={{
           title: 'Stack',
           tabBarIcon: props => (
-            <Text style={props.focused ? theme.iconSelected : null}>Icon</Text>
+            <Icon name="home-outline" size={props.size} color={props.color} />
           ),
         }}
         component={StackOneNavigation}
